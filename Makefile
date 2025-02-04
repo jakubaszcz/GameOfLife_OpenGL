@@ -1,4 +1,7 @@
-SRC =	main.cpp
+SRC =	Main.cpp	\
+		./src/Display.cpp	\
+		./src/Loop.cpp	\
+		./src/Window.cpp
 NAME = GoL
 CC = g++
 CFLAGS = -Wall -Wextra -pedantic -O2
