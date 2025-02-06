@@ -1,7 +1,9 @@
 SRC =	Main.cpp	\
+		./src/extern/Extern.cpp	\
 		./src/Display.cpp	\
-		./src/Loop.cpp	\
-		./src/Window.cpp
+		./src/Reshape.cpp	\
+		./src/Window.cpp	\
+		./src/Grid.cpp
 NAME = GoL
 CC = g++
 CFLAGS = -Wall -Wextra -pedantic -O2
