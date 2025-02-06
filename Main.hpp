@@ -3,6 +3,7 @@
 
 #include "./src/class/Grid.hpp"
 #include "./src/extern/Extern.hpp"
+#include "./src/event/includes/Event.hpp"
 
 
 #ifndef MAIN_HPP

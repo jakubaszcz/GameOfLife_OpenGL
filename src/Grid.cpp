@@ -3,8 +3,6 @@
 
 
 void Grid::DrawGrid() {
-	_active[8][6] = true;
-	_active[4][6] = true;
 	float size = 0.02;
 	float padding = window.GetWidth() * size;
 	for (int i = 0; i < GetColumns(); i++) {
