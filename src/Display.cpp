@@ -14,5 +14,6 @@ void loop(int argc, char** argv) {
     glutCreateWindow("GoL");
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
+    event();
     glutMainLoop();
 }
