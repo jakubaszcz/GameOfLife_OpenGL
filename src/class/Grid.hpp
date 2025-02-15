@@ -5,11 +5,11 @@
 
 class Grid {
   public:
-    int _rows = 10;
-    int _columns = 10;
+    int _rows = 25;
+    int _columns = 25;
     int _height, _width;
     float _size = 0.02;
-    bool _active[10][10] = {false};
+    bool _active[25][25] = {false};
     Grid() = default;
 	int SetGrid(int rows, int columns) { return _rows = rows, _columns = columns; };
 	int GetColumns() const { return _columns; };

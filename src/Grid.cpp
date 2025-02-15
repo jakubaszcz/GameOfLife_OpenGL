@@ -16,6 +16,7 @@ void Grid::DrawGrid() {
             float y = offsetY + j * gridSize;
             DrawUnitGrid(x, y, GetSize(), _active[i][j]);
     }
+    }
 }
 
 void Grid::DrawUnitGrid(float x, float y, float size, bool filled) {
@@ -43,6 +44,6 @@ void Grid::DrawUnitGrid(float x, float y, float size, bool filled) {
         glVertex2f(x, y + resize);
         glVertex2f(x, y);
         glEnd();
+        }
     }
-}
 
