@@ -3,6 +3,7 @@ SRC =	Main.cpp	\
 		./src/Display.cpp	\
 		./src/event/Event.cpp	\
 		./src/event/MouseEvent.cpp	\
+		./src/event/KeyBoardEvent.cpp	\
 		./src/Reshape.cpp	\
 		./src/Window.cpp	\
 		./src/Grid.cpp

@@ -2,4 +2,5 @@
 
 void event() {
     glutMouseFunc(mouseEvent);
+    glutKeyboardFunc(keyBoardEvent);
 }

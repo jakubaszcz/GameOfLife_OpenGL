@@ -5,7 +5,6 @@
 
 void mouseEvent(int button, int state, int mouseX, int mouseY) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-
         float gridSize = window.GetWidth() * grid.GetSize();
         float sizeColumns = gridSize * grid.GetColumns();
         float sizeRows = gridSize * grid.GetRows();
