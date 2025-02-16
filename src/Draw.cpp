@@ -3,7 +3,7 @@
 #include "./extern/Extern.hpp"
 
 void Draw::DrawSimulateLight() {
-    float gridSize = window.GetWidth() * 0.02;
+    float size = window.GetWidth() * 0.02;
 
     glBegin(GL_QUADS);
 
@@ -13,10 +13,9 @@ void Draw::DrawSimulateLight() {
         glColor3f(1.0f, 0.0f, 0.0f);
     }
 
-    glVertex2f(10, 10);
-    glVertex2f(10 + gridSize, 10);
-    glVertex2f(10 + gridSize, 10 + gridSize);
-    glVertex2f(10, 10 + gridSize);
-
+    glVertex2f(10, window.GetHeight() - 10);
+    glVertex2f(10 + size, window.GetHeight() - 10);
+    glVertex2f(10 + size, window.GetHeight() - 10 - size);
+    glVertex2f(10, window.GetHeight() - 10 - size);
     glEnd();
 }
