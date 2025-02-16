@@ -47,3 +47,30 @@ void Grid::DrawUnitGrid(float x, float y, float size, bool filled) {
         }
     }
 
+int Grid::CountNeighbours(int x, int y) {
+    int neighbours = 0;
+    int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+    int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
+
+    for (int i = 0; i < 8; i++) {
+      neighbours += (grid._active[x + dx[i]][y] + dy[i] ? 1 : 0);
+    }
+    return neighbours;
+}
+
+/*
+  a b c
+  d i e
+  f g h
+
+    a = x - 1; y - 1
+    b = x - 1; y
+    c = x - 1; y + 1
+    d = x; y - 1
+    e = x; y + 1
+    f = x + 1; y - 1
+    g = x + 1; y
+    h = x + 1; y + 1
+
+*/
+

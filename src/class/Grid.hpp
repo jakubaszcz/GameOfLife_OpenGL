@@ -19,6 +19,7 @@ class Grid {
     float GetSize() const { return _size; };
     void DrawUnitGrid(float x, float y, float size, bool filled);
     void SwitchUnitState(int x, int y) { _active[x][y] = !_active[x][y]; };
+    int CountNeighbours(int x, int y);
     void DrawGrid();
 };
 
