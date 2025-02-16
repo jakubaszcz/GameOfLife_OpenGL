@@ -8,6 +8,8 @@ class Command {
     Command() = default;
     void Simulation();
     void Quit();
+    void Forward();
+    void Backward();
 };
 
 #endif //COMMAND_HPP

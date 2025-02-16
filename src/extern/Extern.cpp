@@ -8,5 +8,7 @@ Processor processor;
 Draw draw;
 std::map<unsigned char, std::function<void()>> keys {
         {'g', []() { command.Simulation(); }},
-        {'q', []() { command.Quit(); }}
+        {'q', []() { command.Quit(); }},
+        {'a', []() { command.Backward(); }},
+        {'e', []() { command.Forward(); }}
 };
