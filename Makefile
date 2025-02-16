@@ -1,6 +1,8 @@
 SRC =	Main.cpp	\
 		./src/extern/Extern.cpp	\
 		./src/Display.cpp	\
+		./src/Command.cpp	\
+		./src/Processor.cpp	\
 		./src/event/Event.cpp	\
 		./src/event/MouseEvent.cpp	\
 		./src/event/KeyBoardEvent.cpp	\

@@ -12,6 +12,7 @@ void loop(int argc, char** argv) {
     glClearColor(0, 0, 0, 1);
     glutInitWindowSize(window._width, window._height);
     glutCreateWindow("GoL");
+    if (processor._ExitProgram()) exit(EXIT_SUCCESS);
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     event();

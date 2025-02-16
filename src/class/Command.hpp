@@ -6,7 +6,8 @@
 class Command {
   public:
     Command() = default;
-    void Simulation() { std::cout << "Simulation." << std::endl; };
+    void Simulation();
+    void Quit();
 };
 
 #endif //COMMAND_HPP
