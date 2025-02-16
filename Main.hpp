@@ -2,6 +2,7 @@
 #include "./src/class/Window.hpp"
 
 #include "./src/class/Grid.hpp"
+#include "./src/class/Draw.hpp"
 #include "./src/extern/Extern.hpp"
 #include "./src/event/includes/Event.hpp"
 #include "./src/processor/include/Processor.hpp"

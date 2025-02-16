@@ -7,6 +7,7 @@ SRC =	Main.cpp	\
 		./src/event/MouseEvent.cpp	\
 		./src/event/KeyBoardEvent.cpp	\
 		./src/Reshape.cpp	\
+		./src/Draw.cpp	\
 		./src/Update.cpp	\
 		./src/Window.cpp	\
 		./src/Grid.cpp
