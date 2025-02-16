@@ -53,10 +53,16 @@ int Grid::CountNeighbours(int x, int y) {
     int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
     for (int i = 0; i < 8; i++) {
-      neighbours += (grid._active[x + dx[i]][y] + dy[i] ? 1 : 0);
+        int nx = x + dx[i];
+        int ny = y + dy[i];
+
+        if (nx >= 0 && nx < grid._width && ny >= 0 && ny < grid._height) {
+            neighbours += (grid._active[nx][ny] ? 1 : 0);
+        }
     }
     return neighbours;
 }
+
 
 /*
   a b c
