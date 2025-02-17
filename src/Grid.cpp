@@ -56,11 +56,31 @@ int Grid::CountNeighbours(int x, int y) {
         int nx = x + dx[i];
         int ny = y + dy[i];
 
-        if (nx >= 0 && nx < grid._width && ny >= 0 && ny < grid._height) {
+        if (nx >= 0 && nx < grid.GetColumns() && ny >= 0 && ny < grid.GetRows()) {
             neighbours += (grid._active[nx][ny] ? 1 : 0);
         }
     }
     return neighbours;
+}
+
+void Grid::DeleteGrid() {
+    if (_active) {
+        for (int i = 0; i < _rows; i++) {
+            delete[] _active[i];
+        }
+        delete[] _active;
+        _active = nullptr;
+    }
+}
+
+void Grid::ResizeGrid(int columns, int rows) {
+    _columns = columns;
+    _rows = rows;
+
+    _active = new bool*[rows];
+        for (int i = 0; i < rows; i++) {
+            _active[i] = new bool[columns]();
+        }
 }
 
 
