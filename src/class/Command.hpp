@@ -10,6 +10,7 @@ class Command {
     void Quit();
     void Forward();
     void Backward();
+    void Reset();
 };
 
 #endif //COMMAND_HPP

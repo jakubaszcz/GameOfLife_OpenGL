@@ -9,4 +9,5 @@ void keyBoardEvent(unsigned char key, int x, int y) {
     if (command != keys.end()) {
       command->second();
     }
+    glutPostRedisplay();
 }
