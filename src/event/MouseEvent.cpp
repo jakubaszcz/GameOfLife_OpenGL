@@ -26,7 +26,8 @@ void selectGrid(int mouseX, int mouseY) {
 void resizeColumnsGrid(int mouseX, int mouseY) {
     float size = window.GetWidth() * grid.GetSize();
     int length = 0;
-    for (; length < 5; length++) if (grid.GetColumns() == grid._columnsSize[length]) break;
+    for (; length < 5; length++)
+      if (grid.GetColumns() == grid._columnsSize[length]) break;
     int index = (length + 1) % 5;
     float sizeHeight = size * grid.gridSize[length];
     float sizeWidth = size;
