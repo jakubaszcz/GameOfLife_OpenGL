@@ -6,6 +6,8 @@ class Draw {
         Draw() = default;
         ~Draw() = default;
         void DrawSimulateLight();
+        void DrawColumnsChanger();
+        void DrawRowsChanger();
 };
 
 #endif //DRAW_HPP

@@ -4,6 +4,8 @@ void display() {
   glClear(GL_COLOR_BUFFER_BIT);
   grid.DrawGrid();
   draw.DrawSimulateLight();
+  draw.DrawColumnsChanger();
+  draw.DrawRowsChanger();
   glFlush();
 }
 

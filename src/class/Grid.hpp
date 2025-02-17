@@ -8,6 +8,9 @@ class Grid {
     int _rows = 25;
     int _columns = 25;
     int _height, _width;
+    int _columnsSize[5] = {5, 10, 15, 20, 25};
+    int _rowsSize[5] = {5, 10, 15, 20, 25};
+    int gridSize[5] = {1, 2, 3, 4, 5};
     float _size = 0.02;
     bool **_active = nullptr;
     Grid() { ResizeGrid(_columns, _rows); };
