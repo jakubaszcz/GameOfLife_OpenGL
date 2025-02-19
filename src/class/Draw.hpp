@@ -8,6 +8,7 @@ class Draw {
         void DrawSimulateLight();
         void DrawColumnsChanger();
         void DrawRowsChanger();
+        void DrawSpeedChanger();
 };
 
 #endif //DRAW_HPP

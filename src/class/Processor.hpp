@@ -12,6 +12,7 @@ class Processor {
     bool _SimulationProgram() { return isSimulation; };
     void OnProgramQuit() { programQuit = true; }
     void ToggleSimulation() { isSimulation = !isSimulation; };
+    void ChangeSimulationSpeed();
     void Simulation();
 };
 

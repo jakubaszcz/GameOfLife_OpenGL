@@ -14,6 +14,8 @@ extern Grid grid;
 extern Command command;
 extern Processor processor;
 extern Draw draw;
+extern int speeds[];
+extern int speed;
 extern std::map<unsigned char, std::function<void()>> keys;
 
 #endif //EXTERN_HPP

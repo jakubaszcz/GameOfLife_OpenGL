@@ -3,6 +3,7 @@ SRC =	Main.cpp	\
 		./src/Display.cpp	\
 		./src/Command.cpp	\
 		./src/processor/Algorithm.cpp	\
+		./src/processor/ChangeAlgorithmeSpeed.cpp	\
 		./src/event/Event.cpp	\
 		./src/event/MouseEvent.cpp	\
 		./src/event/KeyBoardEvent.cpp	\

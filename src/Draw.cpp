@@ -63,3 +63,25 @@ void Draw::DrawRowsChanger() {
     glVertex2f(10 + gap, 10 + size * grid.gridSize[length]);
     glEnd();
 }
+
+void Draw::DrawSpeedChanger() {
+    int resize[6] = {1, 2, 3, 4, 5, 6};
+    float size = window.GetWidth() * 0.02;
+    float gap = window.GetHeight() * 0.04;
+    int length = 0;
+    for (; length < 6; length++)
+        if (speed == speeds[length]) break;
+    glBegin(GL_QUADS);
+    if (length == 5) {
+        glColor3f(0.0f, 1.0f, 0.0f);
+    } else if (length == 0) {
+        glColor3f(1.0f, 0.0f, 0.0f);
+    } else {
+        glColor3f(1.0f, 1.0f, 1.0f);
+    }
+    glVertex2f(10 + gap, window.GetHeight() - 10);
+    glVertex2f(10 + size + gap * resize[length], window.GetHeight() - 10);
+    glVertex2f(10 + size + gap * resize[length], window.GetHeight() - 10 - size);
+    glVertex2f(10 + gap, window.GetHeight() - 10 - size);
+    glEnd();
+}

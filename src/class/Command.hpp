@@ -12,6 +12,8 @@ class Command {
     void Backward();
     void SizeColumns();
     void SizeRows();
+    void UpSpeed();
+    void DownSpeed();
     void Reset();
 };
 

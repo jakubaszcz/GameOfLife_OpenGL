@@ -6,6 +6,8 @@ Grid grid;
 Command command;
 Processor processor;
 Draw draw;
+int speeds[] = {0, 50, 100, 250, 500, 1000};
+int speed = speeds[0];
 std::map<unsigned char, std::function<void()>> keys {
         {'g', []() { command.Simulation(); }},
         {'q', []() { command.Quit(); }},
@@ -14,4 +16,6 @@ std::map<unsigned char, std::function<void()>> keys {
         {'e', []() { command.Forward(); }},
         {'p', []() { command.SizeColumns(); }},
         {'o', []() { command.SizeRows(); }},
+        {'m', []() { command.UpSpeed(); }},
+        {'l', []() { command.DownSpeed(); }}
 };

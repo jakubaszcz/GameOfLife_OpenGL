@@ -7,6 +7,7 @@ void display() {
   draw.DrawSimulateLight();
   draw.DrawColumnsChanger();
   draw.DrawRowsChanger();
+  draw.DrawSpeedChanger();
   glFlush();
 }
 
@@ -20,6 +21,5 @@ void loop(int argc, char** argv) {
     glutReshapeFunc(reshape);
     glutIdleFunc(update);
     event();
-	std::this_thread::sleep_for(std::chrono::milliseconds(500));
     glutMainLoop();
 }
