@@ -45,15 +45,11 @@ void resizeRowsGrid(int mouseX, int mouseY) {
     float size = window.GetWidth() * grid.GetSize();
     float gap = window.GetWidth() * 0.04;
     int length = 0;
-    std::cout << grid.GetRows() << std::endl;
     for (; length < 5; length++) {
-        std::cout << grid._rowsSize[length] << std::endl;
               if (grid.GetRows() == grid._rowsSize[length]) break;
 
     }
     int index = (length + 1) % 5;
-        std::cout << "Change : " << grid._rowsSize[index] << std::endl;
-
     float sizeHeight = size * grid.gridSize[length];
     float sizeWidth = size;
     float offsetX = gap;
@@ -63,8 +59,6 @@ void resizeRowsGrid(int mouseX, int mouseY) {
     if (adjMouseX >= offsetX && adjMouseX <= offsetX + sizeWidth &&
         adjMouseY >= offsetY && adjMouseY <= offsetY + size * grid.gridSize[length])
         grid.ResizeGrid(grid.GetColumns(), grid._rowsSize[index]);
-    std::cout << "Change : " << grid._rowsSize[index] << std::endl;
-
 }
 
 void mouseEvent(int button, int state, int mouseX, int mouseY) {

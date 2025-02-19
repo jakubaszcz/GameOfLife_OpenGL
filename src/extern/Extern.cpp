@@ -11,5 +11,7 @@ std::map<unsigned char, std::function<void()>> keys {
         {'q', []() { command.Quit(); }},
         {'r', []() { command.Reset(); }},
         {'a', []() { command.Backward(); }},
-        {'e', []() { command.Forward(); }}
+        {'e', []() { command.Forward(); }},
+        {'p', []() { command.SizeColumns(); }},
+        {'o', []() { command.SizeRows(); }},
 };

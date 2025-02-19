@@ -1,5 +1,7 @@
 #include <GL/glut.h>
 #include "./src/class/Window.hpp"
+#include <thread>
+#include <chrono>
 
 #include "./src/class/Grid.hpp"
 #include "./src/class/Draw.hpp"

@@ -10,6 +10,8 @@ class Command {
     void Quit();
     void Forward();
     void Backward();
+    void SizeColumns();
+    void SizeRows();
     void Reset();
 };
 

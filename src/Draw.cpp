@@ -27,7 +27,13 @@ void Draw::DrawColumnsChanger() {
         if (grid.GetColumns() == grid._columnsSize[length]) break;
     }
     glBegin(GL_QUADS);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    if (length == 4) {
+        glColor3f(0.0f, 1.0f, 0.0f);
+    } else if (length == 0) {
+        glColor3f(1.0f, 0.0f, 0.0f);
+    } else {
+        glColor3f(1.0f, 1.0f, 1.0f);
+    }
     glVertex2f(10, 10);
     glVertex2f(10 + size, 10);
     glVertex2f(10 + size, 10 + size * grid.gridSize[length]);
@@ -44,7 +50,13 @@ void Draw::DrawRowsChanger() {
     for (; length < 5; length++)
         if (grid.GetRows() == grid._rowsSize[length]) break;
     glBegin(GL_QUADS);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    if (length == 4) {
+        glColor3f(0.0f, 1.0f, 0.0f);
+    } else if (length == 0) {
+        glColor3f(1.0f, 0.0f, 0.0f);
+    } else {
+        glColor3f(1.0f, 1.0f, 1.0f);
+    }
     glVertex2f(10 + gap, 10);
     glVertex2f(10 + gap + size, 10);
     glVertex2f(10 + gap + size, 10 + size * grid.gridSize[length]);

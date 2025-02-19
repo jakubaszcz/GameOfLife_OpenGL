@@ -1,5 +1,6 @@
 #include "../Main.hpp"
 
+
 void display() {
   glClear(GL_COLOR_BUFFER_BIT);
   grid.DrawGrid();
@@ -19,6 +20,6 @@ void loop(int argc, char** argv) {
     glutReshapeFunc(reshape);
     glutIdleFunc(update);
     event();
-    processor.Simulation();
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
     glutMainLoop();
 }
