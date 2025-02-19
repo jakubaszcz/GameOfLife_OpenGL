@@ -3,6 +3,7 @@
 
 
 void Grid::DrawGrid() {
+      std::cout << _rows << std::endl;
     _height = window.GetHeight() / _rows;
     _width = window.GetWidth() / _columns;
     float gridSize = window.GetWidth() * GetSize();
@@ -57,15 +58,15 @@ int Grid::CountNeighbours(int x, int y) {
         int ny = y + dy[i];
 
         if (nx >= 0 && nx < grid.GetColumns() && ny >= 0 && ny < grid.GetRows()) {
-            neighbours += (grid._active[nx][ny] ? 1 : 0);
-        }
+    		neighbours += (grid._active[nx][ny] ? 1 : 0);
+		}
     }
     return neighbours;
 }
 
 void Grid::DeleteGrid() {
     if (_active) {
-        for (int i = 0; i < _rows; i++) {
+        for (int i = 0; i < _columns; i++) {
             delete[] _active[i];
         }
         delete[] _active;
@@ -74,14 +75,16 @@ void Grid::DeleteGrid() {
 }
 
 void Grid::ResizeGrid(int columns, int rows) {
-    _columns = columns;
-    _rows = rows;
+    DeleteGrid();
 
-    _active = new bool*[rows];
-        for (int i = 0; i < rows; i++) {
-            _active[i] = new bool[columns]();
-        }
+    _rows = rows;
+    _columns = columns;
+    _active = new bool*[_columns];
+    for (int i = 0; i < _columns; i++) {
+        _active[i] = new bool[_rows]();
+    }
 }
+
 
 
 /*

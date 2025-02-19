@@ -36,17 +36,18 @@ void Draw::DrawColumnsChanger() {
 }
 
 void Draw::DrawRowsChanger() {
-      float size = window.GetWidth() * 0.02;
-      int length = 0;
+    float size = window.GetWidth() * 0.02;
+    int length = 0;
 
-    for (; length < 5; length++) {
+    float gap = window.GetHeight() * 0.04;
+
+    for (; length < 5; length++)
         if (grid.GetRows() == grid._rowsSize[length]) break;
-    }
     glBegin(GL_QUADS);
     glColor3f(1.0f, 1.0f, 1.0f);
-    glVertex2f(30, 10);
-    glVertex2f(30 + size, 10);
-    glVertex2f(30 + size, 10 + size * grid.gridSize[length]);
-    glVertex2f(30, 10 + size * grid.gridSize[length]);
+    glVertex2f(10 + gap, 10);
+    glVertex2f(10 + gap + size, 10);
+    glVertex2f(10 + gap + size, 10 + size * grid.gridSize[length]);
+    glVertex2f(10 + gap, 10 + size * grid.gridSize[length]);
     glEnd();
 }

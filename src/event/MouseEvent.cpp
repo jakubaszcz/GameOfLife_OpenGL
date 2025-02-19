@@ -36,18 +36,42 @@ void resizeColumnsGrid(int mouseX, int mouseY) {
     float adjMouseX = (float)mouseX;
     float adjMouseY = window.GetHeight() - (float)mouseY;
     if (adjMouseX >= offsetX && adjMouseX <= offsetX + sizeWidth &&
-        adjMouseY >= offsetX && adjMouseY <= offsetY)
+        adjMouseY >= offsetX && adjMouseY <= offsetY) {
         grid.ResizeGrid(grid._columnsSize[index], grid.GetRows());
+        }
 }
 
 void resizeRowsGrid(int mouseX, int mouseY) {
     float size = window.GetWidth() * grid.GetSize();
+    float gap = window.GetWidth() * 0.04;
+    int length = 0;
+    std::cout << grid.GetRows() << std::endl;
+    for (; length < 5; length++) {
+        std::cout << grid._rowsSize[length] << std::endl;
+              if (grid.GetRows() == grid._rowsSize[length]) break;
+
+    }
+    int index = (length + 1) % 5;
+        std::cout << "Change : " << grid._rowsSize[index] << std::endl;
+
+    float sizeHeight = size * grid.gridSize[length];
+    float sizeWidth = size;
+    float offsetX = gap;
+    float offsetY = 10;
+    float adjMouseX = (float)mouseX;
+    float adjMouseY = window.GetHeight() - (float)mouseY;
+    if (adjMouseX >= offsetX && adjMouseX <= offsetX + sizeWidth &&
+        adjMouseY >= offsetY && adjMouseY <= offsetY + size * grid.gridSize[length])
+        grid.ResizeGrid(grid.GetColumns(), grid._rowsSize[index]);
+    std::cout << "Change : " << grid._rowsSize[index] << std::endl;
+
 }
 
 void mouseEvent(int button, int state, int mouseX, int mouseY) {
     if (!processor._SimulationProgram() && button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
         selectGrid(mouseX, mouseY);
         resizeColumnsGrid(mouseX, mouseY);
+        resizeRowsGrid(mouseX, mouseY);
         glutPostRedisplay();
     }
 }
