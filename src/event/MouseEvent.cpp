@@ -23,6 +23,43 @@ void selectGrid(int mouseX, int mouseY) {
     }
 }
 
+void selectSquareColor(int mouseX, int mouseY) {
+    float gridSize = window.GetWidth() * grid.GetSize();
+    float gap = window.GetWidth() * 0.04;
+    float sizeColumns = gridSize * 7;
+
+    float offsetX = (window.GetWidth() - sizeColumns) / 2.0f;
+    float offsetY = 10;
+
+    float adjMouseX = (float)mouseX;
+    float adjMouseY = window.GetHeight() - (float)mouseY;
+
+    if (adjMouseX >= offsetX && adjMouseX <= offsetX + sizeColumns &&
+        adjMouseY >= offsetY && adjMouseY <= offsetY + gridSize) {
+        int column = (adjMouseX - offsetX) / gridSize;
+        colorSquare = column;
+        }
+}
+
+void selectGridColor(int mouseX, int mouseY) {
+    float gridSize = window.GetWidth() * grid.GetSize();
+    float gap = window.GetWidth() * 0.04;
+    float sizeColumns = gridSize * 7;
+
+    float offsetX = (window.GetWidth() - sizeColumns) / 2.0f;
+    float offsetY = 10.0f + ((gridSize * 2) + gap) + gridSize;
+
+    float adjMouseX = (float)mouseX;
+    float adjMouseY = window.GetHeight() - (float)mouseY;
+
+    if (adjMouseX >= offsetX && adjMouseX <= offsetX + sizeColumns &&
+        adjMouseY <= offsetY && adjMouseY >= offsetY - gridSize) {
+        int column = (adjMouseX - offsetX) / gridSize;
+        colorGrid = column;
+        }
+}
+
+
 void resizeColumnsGrid(int mouseX, int mouseY) {
     float size = window.GetWidth() * grid.GetSize();
     int length = 0;
@@ -60,7 +97,6 @@ void resizeRowsGrid(int mouseX, int mouseY) {
 }
 
 void changeSimulationSpeed(int mouseX, int mouseY) {
-    std::cout << mouseX << " " << window.GetHeight() - mouseY << std::endl;
     int resize[6] = {1, 2, 3, 4, 5, 6};
     float size = window.GetWidth() * 0.02;
     float gap = window.GetHeight() * 0.04;
@@ -72,7 +108,6 @@ void changeSimulationSpeed(int mouseX, int mouseY) {
     float sizeWidth = size;
     float offsetX = gap;
     float offsetY = 10 + window.GetHeight();
-    std::cout << offsetX << " " << offsetY << std::endl;
     float adjMouseX = (float)mouseX;
     float adjMouseY = window.GetHeight() - (float)mouseY;
     if (adjMouseX >= offsetX && adjMouseX <= offsetX + sizeWidth &&
@@ -86,6 +121,8 @@ void mouseEvent(int button, int state, int mouseX, int mouseY) {
         resizeColumnsGrid(mouseX, mouseY);
         resizeRowsGrid(mouseX, mouseY);
         changeSimulationSpeed(mouseX, mouseY);
+        selectSquareColor(mouseX, mouseY);
+        selectGridColor(mouseX, mouseY);
         glutPostRedisplay();
     }
 }

@@ -111,10 +111,10 @@ void Draw::DrawColorSquareChanger() {
     int size = window.GetWidth() * 0.02;
     int gap = window.GetHeight() * 0.04;
 
-    float offsetX = (window.GetWidth() - gap * 6) / 2.0f;
+    float offsetX = (window.GetWidth() - size * 6) / 2.0f;
     float offsetY = 10.0f;
     for (int i = 0; i < 7; i++) {
-        float x = offsetX + i * gap;
+        float x = offsetX + i * size;
         DrawUnitSquareColorChanger(x, offsetY, size, i);
     }
 }
@@ -143,11 +143,11 @@ void Draw::DrawColorGridChanger() {
     int size = window.GetWidth() * 0.02;
     int gap = window.GetHeight() * 0.04;
 
-    float offsetX = (window.GetWidth() - gap * 6) / 2.0f;
+    float offsetX = (window.GetWidth() - size * 6) / 2.0f;
     float offsetY = 10.0f + ((size * 2) + gap) + size;
 
     for (int i = 0; i < 7; i++) {
-        float x = offsetX + i * gap;
+        float x = offsetX + i * size;
         DrawUnitGridColorChanger(x, offsetY, size, i);
     }
 }
