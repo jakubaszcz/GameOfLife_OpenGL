@@ -51,4 +51,6 @@ void Command::Reset() {
         grid._active[i][j] = false;
       }
     }
+    colorSquare = 6;
+    colorGrid = 6;
 };
