@@ -40,7 +40,7 @@ void Command::DownSpeed() {
     int length = 0;
     for (; length < 6; length++)
         if (speeds[length] == speed) break;
-    int index = (--length < 0 ? 6 : --length);
+    int index = (length <= 0 ? 5 : --length);
     speed = speeds[index];
     glutPostRedisplay();
 }
