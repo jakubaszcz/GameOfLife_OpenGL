@@ -16,6 +16,8 @@ extern Processor processor;
 extern Draw draw;
 extern int speeds[];
 extern int speed;
+extern int colorSquare;
+extern int colorGrid;
 extern std::map<unsigned char, std::function<void()>> keys;
 
 #endif //EXTERN_HPP

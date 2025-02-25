@@ -85,3 +85,69 @@ void Draw::DrawSpeedChanger() {
     glVertex2f(10 + gap, window.GetHeight() - 10 - size);
     glEnd();
 }
+
+
+void Draw::DrawUnitSquareColorChanger(int x, int y, int size, int pos) {
+    glBegin(GL_QUADS);
+    float sizer = window.GetWidth() * 0.03;
+
+    if (pos == colorSquare) {
+        glColor3f(colors[pos][0], colors[pos][1], colors[pos][2]);
+        glVertex2f(x, y);
+        glVertex2f(x + size, y);
+        glVertex2f(x + size, y + sizer);
+        glVertex2f(x, y + sizer);
+    } else {
+        glColor3f(colors[pos][0], colors[pos][1], colors[pos][2]);
+        glVertex2f(x, y);
+        glVertex2f(x + size, y);
+        glVertex2f(x + size, y + size);
+        glVertex2f(x, y + size);
+    }
+    glEnd();
+}
+
+void Draw::DrawColorSquareChanger() {
+    int size = window.GetWidth() * 0.02;
+    int gap = window.GetHeight() * 0.04;
+
+    float offsetX = (window.GetWidth() - gap * 6) / 2.0f;
+    float offsetY = 10.0f;
+    for (int i = 0; i < 7; i++) {
+        float x = offsetX + i * gap;
+        DrawUnitSquareColorChanger(x, offsetY, size, i);
+    }
+}
+
+void Draw::DrawUnitGridColorChanger(int x, int y, int size, int pos) {
+    glBegin(GL_QUADS);
+    float sizer = window.GetWidth() * 0.03;
+
+    if (pos == colorGrid) {
+        glColor3f(colors[pos][0], colors[pos][1], colors[pos][2]);
+        glVertex2f(x, y);
+        glVertex2f(x + size, y);
+        glVertex2f(x + size, y - sizer);
+        glVertex2f(x, y - sizer);
+    } else {
+        glColor3f(colors[pos][0], colors[pos][1], colors[pos][2]);
+        glVertex2f(x, y);
+        glVertex2f(x + size, y);
+        glVertex2f(x + size, y - size);
+        glVertex2f(x, y - size);
+    }
+    glEnd();
+}
+
+void Draw::DrawColorGridChanger() {
+    int size = window.GetWidth() * 0.02;
+    int gap = window.GetHeight() * 0.04;
+
+    float offsetX = (window.GetWidth() - gap * 6) / 2.0f;
+    float offsetY = 10.0f + ((size * 2) + gap) + size;
+
+    for (int i = 0; i < 7; i++) {
+        float x = offsetX + i * gap;
+        DrawUnitGridColorChanger(x, offsetY, size, i);
+    }
+}

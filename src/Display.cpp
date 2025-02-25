@@ -8,6 +8,8 @@ void display() {
   draw.DrawColumnsChanger();
   draw.DrawRowsChanger();
   draw.DrawSpeedChanger();
+  draw.DrawColorSquareChanger();
+  draw.DrawColorGridChanger();
   glFlush();
 }
 

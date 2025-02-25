@@ -8,6 +8,8 @@ Processor processor;
 Draw draw;
 int speeds[] = {0, 50, 100, 250, 500, 1000};
 int speed = speeds[0];
+int colorSquare = 6;
+int colorGrid = 6;
 std::map<unsigned char, std::function<void()>> keys {
         {'g', []() { command.Simulation(); }},
         {'q', []() { command.Quit(); }},

@@ -60,6 +60,7 @@ void resizeRowsGrid(int mouseX, int mouseY) {
 }
 
 void changeSimulationSpeed(int mouseX, int mouseY) {
+    std::cout << mouseX << " " << window.GetHeight() - mouseY << std::endl;
     int resize[6] = {1, 2, 3, 4, 5, 6};
     float size = window.GetWidth() * 0.02;
     float gap = window.GetHeight() * 0.04;
@@ -71,6 +72,7 @@ void changeSimulationSpeed(int mouseX, int mouseY) {
     float sizeWidth = size;
     float offsetX = gap;
     float offsetY = 10 + window.GetHeight();
+    std::cout << offsetX << " " << offsetY << std::endl;
     float adjMouseX = (float)mouseX;
     float adjMouseY = window.GetHeight() - (float)mouseY;
     if (adjMouseX >= offsetX && adjMouseX <= offsetX + sizeWidth &&

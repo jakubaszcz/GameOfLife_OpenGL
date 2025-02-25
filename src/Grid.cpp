@@ -3,7 +3,6 @@
 
 
 void Grid::DrawGrid() {
-      std::cout << _rows << std::endl;
     _height = window.GetHeight() / _rows;
     _width = window.GetWidth() / _columns;
     float gridSize = window.GetWidth() * GetSize();
@@ -24,7 +23,7 @@ void Grid::DrawUnitGrid(float x, float y, float size, bool filled) {
     float resize = window.GetWidth() * size;
     if (filled) {
         glBegin(GL_QUADS);
-        glColor3f(1.0f, 1.0f, 1.0f);
+        glColor3f(draw.colors[colorSquare][0], draw.colors[colorSquare][1], draw.colors[colorSquare][2]);
         glVertex2f(x, y);
         glVertex2f(x + resize, y);
         glVertex2f(x + resize, y + resize);
@@ -32,7 +31,7 @@ void Grid::DrawUnitGrid(float x, float y, float size, bool filled) {
         glEnd();
     } else {
         glBegin(GL_LINES);
-        glColor3f(1.0, 1.0, 1.0);
+        glColor3f(draw.colors[colorGrid][0], draw.colors[colorGrid][1], draw.colors[colorGrid][2]);
         glVertex2f(x, y);
         glVertex2f(x + resize, y);
 
