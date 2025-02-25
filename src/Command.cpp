@@ -45,6 +45,7 @@ void Command::DownSpeed() {
     glutPostRedisplay();
 }
 void Command::Reset() {
+    if (processor._SimulationProgram()) return;
     for (int i = 0; i < grid.GetColumns(); i++) {
       for (int j = 0; j < grid.GetRows(); j++) {
         grid._active[i][j] = false;
