@@ -54,3 +54,13 @@ void Command::Reset() {
     colorSquare = 6;
     colorGrid = 6;
 };
+
+void Command::Random() {
+  if (processor._SimulationProgram()) return;
+  Reset();
+  for (int i = 0; i < grid.GetColumns(); i++) {
+	for (int j = 0; j < grid.GetRows(); j++) {
+		grid._active[i][j] = rand() % 2;
+	}
+  }
+}

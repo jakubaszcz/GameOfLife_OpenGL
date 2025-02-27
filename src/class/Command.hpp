@@ -14,6 +14,7 @@ class Command {
     void SizeRows();
     void UpSpeed();
     void DownSpeed();
+    void Random();
     void Reset();
 };
 
